@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <title data-i18n="title"> </title>
+</head>
+
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+        </ul>
+        <ul>
+            <li><button class="secondary" data-i18n="btn_cancel_experiment"> </button></li>
+        </ul>
+        <ul>
+            <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
+            <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <h1 data-i18n="web_bluetooth_usability_test"> </h1>
+        <br>
+        <details>
+            <summary data-i18n="user_study_about"> </summary>
+            <p data-i18n="user_study_about_text"> </p>
+        </details>
+        <hr>
+        <details open>
+            <summary data-i18n="preparations"> </summary>
+            <p data-i18n="preparations_text"> </p>
+            <ol>
+                <li data-i18n="preparations_step1"> </li>
+                <li data-i18n="preparations_step2"> </li>
+                <li data-i18n="preparations_step3"> </li>
+                <li data-i18n="preparations_step4"> </li>
+            </ol>
+        </details>
+        <br>
+        <button id="btnStartExperiment" data-i18n="btn_start_experiment"> </button>
+
+    </main>
+
+    <script type="text/javascript" src="i18n.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+    "btn_cancel_experiment": "Experiment abbrechen",
+    "btn_start_remote_control": "Starte Fernsteuerung",
+    "dialog_btn_cancel": "Abbrechen",
+    "dialog_btn_go_to_task": "Zur Aufgabe",
+    "dialog_btn_waiting_for_connection": "Warte auf Verbindung…",
+    "dialog_header": "🛜 Bluetooth Verbindung",
+    "dialog_text": "Verbinde dein Smartphone mit diesem Bluetooth Gerät: ",
+    "dialog_text_bt_name": "Web Bluetooth Test",
+    "pairing_code": "Kopplungscode",
+    "remote_control": "Fernsteuerung",
+    "remote_control_explanation": "Du kannst jetzt dein Smartphone über den Browser fernsteuern.",
+    "title": "Fernsteuerung"
+}
