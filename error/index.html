@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.red.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <title data-i18n="title"> </title>
+    <style>
+        body {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body class="pico-background-red-500">
+    <nav class="container-fluid">
+        <ul>
+            <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+        </ul>
+        <ul>
+            <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
+            <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <h1 class="pico-color-slate-50" data-i18n="error"> </h1>
+
+        <p class="pico-color-slate-50" data-i18n="error_text"> </p>
+
+    </main>
+
+    <script type="text/javascript" src="../i18n.js"></script>
+</body>
+
+</html>

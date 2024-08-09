@@ -65,11 +65,10 @@ class WebSerialPort {
 var webSerialPort = new WebSerialPort();
 
 navigator.serial.addEventListener("connect", (e) => {
-    // Connect to `e.target` or add it to a list of available ports.
     console.log("Connected with port");
 });
 
 navigator.serial.addEventListener("disconnect", (e) => {
-    // Remove `e.target` from the list of available ports.
     console.log("Disconnected with port");
+    window.location.href = "/error";
 });
