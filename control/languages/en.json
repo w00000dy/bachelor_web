@@ -1,6 +1,20 @@
 {
+    "btn_cancel_experiment": "Cancel experiment",
     "btn_start_remote_control": "Start remote control",
+    "btn_task_done": "Task completed",
+    "dialog_bt_guide": "Guide",
+    "dialog_bt_guide_step1": "Open the Bluetooth settings on your smartphone.",
+    "dialog_bt_guide_step2": "Enable Bluetooth.",
+    "dialog_bt_guide_step3": "Connect your smartphone to the device with the name ",
+    "dialog_btn_cancel": "Cancel",
+    "dialog_btn_go_to_task": "Go to the task",
+    "dialog_btn_waiting_for_connection": "Waiting for connection…",
+    "dialog_header": "🛜 Bluetooth connection",
+    "dialog_text": "To start the task, you must first connect your smartphone to the browser via Bluetooth.",
+    "pairing_code": "Pairing code",
     "remote_control": "Remote control",
-    "remote_control_explanation": "You can now remotely control your smartphone via the browser.",
+    "remote_control_explanation": "By pressing the \"Start remote control\" button, you can control your smartphone remotely via the browser. You can end remote control at any time by pressing the ESC key on the keyboard.",
+    "task": "Task",
+    "task_description": "Your task is to search for the YouTube video shown below on your smartphone. You can use the YouTube app or open the YouTube website in your browser. Once you have found the video, start it and pause it after 10 seconds. When completing the task, please only use the browser to control your smartphone and do not make any entries on the smartphone itself.",
     "title": "Remote control"
 }

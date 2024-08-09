@@ -1,6 +1,7 @@
 var movementX = 0, movementY = 0, scroll = 0;
 var lastUpdate = 0;
 var port;
+var connected = false;
 
 const canvas = document.getElementById('canvas');
 
@@ -11,6 +12,7 @@ dialogBtnCancel.addEventListener('click', closeDialog);
 dialogBtnGoToTask.addEventListener('click', goToTask);
 
 restartESP();
+loadYoutubeVideo();
 
 function closeDialog() {
     window.location.href = "/";
@@ -18,8 +20,8 @@ function closeDialog() {
 
 webSerialPort.getPort().then((port) => {
     port.addEventListener('ondata', (e) => {
-        if (e.detail.startsWith("The Bluetooth Device Is Ready To Pair")) {
-
+        if (e.detail.startsWith("Connected")) {
+            connected = true;
         }
         if (e.detail.startsWith("The passkey YES/NO number:")) {
             let passkey = e.detail.split(":")[1].trim();
@@ -30,17 +32,24 @@ webSerialPort.getPort().then((port) => {
             pairingCode.hidden = false;
             pairingCodeNumber.hidden = false;
         }
-        if (e.detail.startsWith("Authentication Complete")) {
+        if (e.detail.startsWith("Authentication Complete") && connected) {
             dialogBtnWaitingForConnection.hidden = true;
             dialogBtnGoToTask.hidden = false;
+            setTimeout(() => {
+                if (connected) {
+                    dialogBtnGoToTask.disabled = false;
+                }
+            }, 3000);
         }
         if (e.detail.startsWith("Disconnected")) {
+            connected = false;
             btDialog.show();
             restartESP();
             pairingCode.hidden = true;
             pairingCodeNumber.hidden = true;
             dialogBtnWaitingForConnection.hidden = false;
             dialogBtnGoToTask.hidden = true;
+            dialogBtnGoToTask.disabled = true;
             document.pointerLockElement = null;
         }
     });
@@ -122,7 +131,6 @@ function sendMouseClick(e) {
 }
 
 function sendKey(e) {
-    console.log(e);
     let c = e.key;
     if (e.key.length > 1) {
         c = String.fromCharCode(e.keyCode);
@@ -183,4 +191,11 @@ function sendKey(e) {
     }
 
     webSerialPort.writeToPort(c);
+}
+
+function loadYoutubeVideo() {
+    const videoIds = ["LXb3EKWsInQ", "1La4QzGeaaQ", "CHSnz0bCaUk"];
+    const videoId = videoIds[Math.floor(Math.random() * videoIds.length)];
+    const url = new URL(videoId, "https://www.youtube.com/embed/");
+    ytVideo.src = url;
 }

@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <title data-i18n="title"> </title>
+    <style>
+        iframe {
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,16 +33,23 @@
 
     <main class="container">
 
-        <h1 data-i18n="remote_control"> </h1>
+        <h2 data-i18n="remote_control"> </h1>
         <br>
 
         <p data-i18n="remote_control_explanation"> </p>
 
         <button id="btnStartRemoteControl" data-i18n="btn_start_remote_control"> </button>
 
+        <h2 data-i18n="task"> </h2>
+        <p data-i18n="task_description"> </p>
+        <p>
+            <iframe id="ytVideo" width="480" height="270"></iframe>
+        </p>
+        <button id="btnTaskDone" data-i18n="btn_task_done"> </button>
+
         <canvas id="canvas" hidden></canvas>
 
-        <dialog id="btDialog" open>
+        <dialog id="btDialog">
             <article>
                 <header>
                     <button id="dialogClose" aria-label="Close" rel="prev"></button>
@@ -45,14 +58,21 @@
                     </p>
                 </header>
 
-                <p data-i18n="dialog_text"> <code data-i18n="dialog_text_bt_name"> </code></p>
+                <p data-i18n="dialog_text"> </p>
 
-                <h2 id="pairingCode" data-i18n="pairing_code" hidden> </h2>
-                <h3 id="pairingCodeNumber" hidden> </h3>
+                <h3 data-i18n="dialog_bt_guide"> </h3>
+                <ol>
+                    <li data-i18n="dialog_bt_guide_step1"> </li>
+                    <li data-i18n="dialog_bt_guide_step2"> </li>
+                    <li data-i18n="dialog_bt_guide_step3"> <code>Web Bluetooth</code>.</li>
+                </ol>
+
+                <h3 id="pairingCode" data-i18n="pairing_code" hidden> </h3>
+                <code id="pairingCodeNumber" hidden> </code>
 
                 <footer>
                     <button id="dialogBtnCancel" class="secondary" data-i18n="dialog_btn_cancel"> </button>
-                    <button id="dialogBtnGoToTask" data-i18n="dialog_btn_go_to_task" hidden> </button>
+                    <button id="dialogBtnGoToTask" data-i18n="dialog_btn_go_to_task" hidden disabled> </button>
                     <button id="dialogBtnWaitingForConnection" aria-busy="true" data-i18n="dialog_btn_waiting_for_connection"> </button>
                 </footer>
             </article>
@@ -60,9 +80,9 @@
 
     </main>
 
-    <script type="text/javascript" src="../i18n.js"></script>
-    <script type="text/javascript" src="../webSerial.js"></script>
-    <script type="text/javascript" src="control.js"></script>
+    <script src="../i18n.js"></script>
+    <script src="../webSerial.js"></script>
+    <script src="control.js"></script>
 </body>
 
 </html>
