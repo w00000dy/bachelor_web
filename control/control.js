@@ -131,6 +131,7 @@ function sendMouseClick(e) {
 }
 
 function sendKey(e) {
+    e.preventDefault();
     let c = e.key;
     if (e.key.length > 1) {
         c = String.fromCharCode(e.keyCode);
