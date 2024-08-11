@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <title data-i18n="title"> </title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+            </ul>
+            <ul>
+                <li><button class="secondary" data-i18n="btn_cancel_experiment"> </button></li>
+            </ul>
+            <ul>
+                <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
+                <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h1 data-i18n="survey"> </h1>
+
+        <p data-i18n="survey_text"> </p>
+
+        <form action="survey.php" method="post" autocomplete="off">
+            <fieldset>
+                <h3 data-i18n="demographics"> </h3>
+                <label data-i18n="age">
+                    <input type="number" name="age" min="0">
+                </label>
+                <label data-i18n="gender">
+                    <select name="gender">
+                        <option selected disabled value="" data-i18n="gender_select"> </option>
+                        <option data-i18n="male" value="male"> </option>
+                        <option data-i18n="female" value="female"> </option>
+                        <option data-i18n="other" value="other"> </option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <h3 data-i18n="technical_experience"> </h3>
+                <label data-i18n="how_many_electronic_devices">
+                    <input type="number" name="num_electronic_devices" min="0">
+                </label>
+                <fieldset>
+                    <legend data-i18n="regularly_tablet_laptop_use"> </legend>
+                    <label>
+                        <input type="radio" name="regular_tablet_laptop_use" value="yes">
+                        <label data-i18n="yes"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="regular_tablet_laptop_use" value="no">
+                        <label data-i18n="no"> </label>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend data-i18n="what_is_main_application_for_electronic_devices"> </legend>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_social_media" value="social_media">
+                        <label data-i18n="social_media"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_communication" value="communication">
+                        <label data-i18n="communication"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_entertainment">
+                        <label data-i18n="entertainment"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_work_and_productivity">
+                        <label data-i18n="work_and_productivity"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_information_search">
+                        <label data-i18n="information_search"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_organization_and_planning">
+                        <label data-i18n="organization_and_planning"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_navigation_and_maps">
+                        <label data-i18n="navigation_and_maps"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_health_and_fitness">
+                        <label data-i18n="health_and_fitness"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="electronic_devices_main_application_smart_home">
+                        <label data-i18n="smart_home"> </label>
+                    </label>
+                </fieldset>
+                <label data-i18n="technical_experience_1_to_5">
+                    <input id="rangeTechEx" type="range" min="1" max="5" step="1" name="technical_experience">
+                    <p data-i18n="value"> <output id="rangeTechExVal"></output></p>
+                </label>
+                <fieldset>
+                    <legend data-i18n="what_bt_devices_do_you_use"> </legend>
+                    <label>
+                        <input type="checkbox" name="bt_devices_smartwatches_fitness_trackers">
+                        <label data-i18n="smartwatches_fitness_trackers"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bt_devices_headphones">
+                        <label data-i18n="headphones"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bt_devices_keyboard_mouse">
+                        <label data-i18n="keyboard_mouse"> </label>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bt_devices_others">
+                        <label data-i18n="others"> </label>
+                    </label>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <h3 data-i18n="experiment"> </h3>
+                <fieldset>
+                    <legend data-i18n="encountered_problems"> </legend>
+                    <label>
+                        <input type="radio" name="encountered_problems" value="yes">
+                        <label data-i18n="yes"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="encountered_problems" value="no">
+                        <label data-i18n="no"> </label>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend data-i18n="bt_pairing_problems"> </legend>
+                    <label>
+                        <input type="radio" name="bt_pairing_problems" value="no">
+                        <label data-i18n="yes"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="bt_pairing_problems" value="yes">
+                        <label data-i18n="no"> </label>
+                    </label>
+                </fieldset>
+                <label data-i18n="if_encountered_problems_explain">
+                    <textarea name="problems_explaination"></textarea>
+                </label>
+                <fieldset>
+                    <legend data-i18n="situation_already_encountered"> </legend>
+                    <label>
+                        <input type="radio" name="situation_already_encountered" value="yes_completely">
+                        <label data-i18n="yes_completely"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="situation_already_encountered" value="yes_only_browser">
+                        <label data-i18n="yes_only_browser"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="situation_already_encountered" value="yes_pairing">
+                        <label data-i18n="yes_pairing"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="situation_already_encountered" value="no">
+                        <label data-i18n="no"> </label>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend data-i18n="know_pairing_code"> </legend>
+                    <small data-i18n="know_pairing_code_hint"> </small>
+                    <label>
+                        <input type="radio" name="know_pairing_code" value="yes">
+                        <label data-i18n="yes"> </label>
+                    </label>
+                    <label>
+                        <input type="radio" name="know_pairing_code" value="no">
+                        <label data-i18n="no"> </label>
+                    </label>
+                </fieldset>
+                <label data-i18n="can_anything_be_improved">
+                    <textarea name="improvements"></textarea>
+                </label>
+                <label data-i18n="additional_thoughts">
+                    <textarea name="additional_thoughts"></textarea>
+                </label>
+            </fieldset>
+            <div class="grid">
+                <div><input type="button" class="secondary" data-i18n="skip_survey"></div>
+                <div><input type="submit" data-i18n="submit_survey"></div>
+            </div>
+
+        </form>
+
+    </main>
+
+    <script src="../i18n.js"></script>
+    <script src="survey.js"></script>
+</body>
+
+</html>
