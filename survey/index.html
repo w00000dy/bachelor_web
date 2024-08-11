@@ -42,9 +42,9 @@
                 <label data-i18n="gender">
                     <select name="gender">
                         <option selected disabled value="" data-i18n="gender_select"> </option>
-                        <option data-i18n="male" value="male"> </option>
-                        <option data-i18n="female" value="female"> </option>
-                        <option data-i18n="other" value="other"> </option>
+                        <option data-i18n="male" value="0"> </option>
+                        <option data-i18n="female" value="1"> </option>
+                        <option data-i18n="other" value=""> </option>
                     </select>
                 </label>
             </fieldset>
@@ -56,11 +56,11 @@
                 <fieldset>
                     <legend data-i18n="regularly_tablet_laptop_use"> </legend>
                     <label>
-                        <input type="radio" name="regular_tablet_laptop_use" value="yes">
+                        <input type="radio" name="regular_tablet_laptop_use" value="1">
                         <label data-i18n="yes"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="regular_tablet_laptop_use" value="no">
+                        <input type="radio" name="regular_tablet_laptop_use" value="0">
                         <label data-i18n="no"> </label>
                     </label>
                 </fieldset>
@@ -132,22 +132,22 @@
                 <fieldset>
                     <legend data-i18n="encountered_problems"> </legend>
                     <label>
-                        <input type="radio" name="encountered_problems" value="yes">
+                        <input type="radio" name="encountered_problems" value="1">
                         <label data-i18n="yes"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="encountered_problems" value="no">
+                        <input type="radio" name="encountered_problems" value="0">
                         <label data-i18n="no"> </label>
                     </label>
                 </fieldset>
                 <fieldset>
                     <legend data-i18n="bt_pairing_problems"> </legend>
                     <label>
-                        <input type="radio" name="bt_pairing_problems" value="no">
+                        <input type="radio" name="bt_pairing_problems" value="0">
                         <label data-i18n="yes"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="bt_pairing_problems" value="yes">
+                        <input type="radio" name="bt_pairing_problems" value="1">
                         <label data-i18n="no"> </label>
                     </label>
                 </fieldset>
@@ -157,19 +157,19 @@
                 <fieldset>
                     <legend data-i18n="situation_already_encountered"> </legend>
                     <label>
-                        <input type="radio" name="situation_already_encountered" value="yes_completely">
+                        <input type="radio" name="situation_already_encountered" value="3">
                         <label data-i18n="yes_completely"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="situation_already_encountered" value="yes_only_browser">
+                        <input type="radio" name="situation_already_encountered" value="2">
                         <label data-i18n="yes_only_browser"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="situation_already_encountered" value="yes_pairing">
+                        <input type="radio" name="situation_already_encountered" value="1">
                         <label data-i18n="yes_pairing"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="situation_already_encountered" value="no">
+                        <input type="radio" name="situation_already_encountered" value="0">
                         <label data-i18n="no"> </label>
                     </label>
                 </fieldset>
@@ -177,11 +177,11 @@
                     <legend data-i18n="know_pairing_code"> </legend>
                     <small data-i18n="know_pairing_code_hint"> </small>
                     <label>
-                        <input type="radio" name="know_pairing_code" value="yes">
+                        <input type="radio" name="know_pairing_code" value="1">
                         <label data-i18n="yes"> </label>
                     </label>
                     <label>
-                        <input type="radio" name="know_pairing_code" value="no">
+                        <input type="radio" name="know_pairing_code" value="0">
                         <label data-i18n="no"> </label>
                     </label>
                 </fieldset>
