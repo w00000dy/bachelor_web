@@ -2,11 +2,23 @@
 function updateContent(langData) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
+        let childs = 0;
+        if (element.getAttribute('data-i18n-childs')) {
+            childs = element.getAttribute('data-i18n-childs');
+        }
         if (langData[key] === undefined) {
             console.warn(`Translation not found for key: ${key}`);
             return;
         }
+
+        if (element.tagName === "INPUT") {
+            element.value = langData[key];
+            return;
+        }
         element.firstChild.textContent = langData[key];
+        for (let i = 1; i <= childs; i++) {
+            element.childNodes[i].after(langData[key + "_ac" + i]);
+        }
     });
 }
 

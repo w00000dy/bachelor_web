@@ -11,9 +11,11 @@
     "dialog_btn_waiting_for_connection": "Warte auf Verbindung…",
     "dialog_header": "🛜 Bluetooth Verbindung",
     "dialog_text": "Um die Aufgabe zu starten, musst du zuerst dein Smartphone per Bluetooth mit dem Browser verbinden.",
+    "loading": "Lade…",
     "pairing_code": "Kopplungscode",
     "remote_control": "Fernsteuerung",
-    "remote_control_explanation": "Durch das Drücken des Knopfes „Starte Fernsteuerung“ kannst du dein Smartphone über den Browser fernsteuern. Die Fernsteuerung kannst du jederzeit durch das Drücken der ESC-Taste auf der Tastatur beenden.",
+    "remote_control_explanation": "Durch das Drücken des Knopfes „Starte Fernsteuerung“ kannst du dein Smartphone über den Browser fernsteuern. Die Fernsteuerung kannst du jederzeit durch das Drücken der ",
+    "remote_control_explanation_ac1": "-Taste auf der Tastatur beenden.",
     "task": "Aufgabe",
     "task_description": "Deine Aufgabe ist es auf deinem Smartphone nach dem YouTube-Video zu suchen, das dir unten angezeigt wird. Du kannst dazu die YouTube-App verwenden oder die YouTube-Webseite im Browser öffnen. Wenn du das Video gefunden hast, starte es und pausiere es nach 10 Sekunden. Bitte verwende beim Durchführen der Aufgabe ausschließlich den Browser zum Steuern deines Smartphones und mache keine Eingaben auf dem Smartphone selbst.",
     "title": "Fernsteuerung"

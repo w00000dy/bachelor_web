@@ -11,6 +11,7 @@
     "dialog_btn_waiting_for_connection": "Waiting for connection…",
     "dialog_header": "🛜 Bluetooth connection",
     "dialog_text": "To start the task, you must first connect your smartphone to the browser via Bluetooth.",
+    "loading": "Loading…",
     "pairing_code": "Pairing code",
     "remote_control": "Remote control",
     "remote_control_explanation": "By pressing the \"Start remote control\" button, you can control your smartphone remotely via the browser. You can end remote control at any time by pressing the ESC key on the keyboard.",
