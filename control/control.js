@@ -3,6 +3,7 @@ var lastUpdate = 0;
 var port;
 var connected = false;
 
+const webSerialPort = new WebSerialPort();
 const canvas = document.getElementById('canvas');
 
 btnStartRemoteControl.addEventListener('click', startRemoteControl);
@@ -19,7 +20,7 @@ function closeDialog() {
 }
 
 webSerialPort.getPort().then((port) => {
-    port.addEventListener('ondata', (e) => {
+    port.addEventListener('online', (e) => {
         if (e.detail.startsWith("Connected")) {
             connected = true;
         }

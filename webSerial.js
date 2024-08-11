@@ -32,13 +32,16 @@ class WebSerialPort {
                         // |reader| has been canceled.
                         break;
                     }
+                    
+                    const eventOnData = new CustomEvent("ondata", { detail: value });
+                    port.dispatchEvent(eventOnData);
 
                     for (const byte of new Uint8Array(value)) {
                         buffer += String.fromCharCode(byte);
                         if (byte === 10) { // newline
                             console.debug("📩 ", buffer);
-                            const event = new CustomEvent("ondata", { detail: buffer });
-                            port.dispatchEvent(event);
+                            const eventOnLine = new CustomEvent("online", { detail: buffer });
+                            port.dispatchEvent(eventOnLine);
                             buffer = '';
                         }
                     }
@@ -61,8 +64,6 @@ class WebSerialPort {
         });
     }
 }
-
-var webSerialPort = new WebSerialPort();
 
 navigator.serial.addEventListener("connect", (e) => {
     console.log("Connected with port");

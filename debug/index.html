@@ -4,120 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/xterm/5.5.0/xterm.min.css" integrity="sha512-XpXUuzg5afNt1bsgnrOesXP70TLH8tXYYK5sK+Y0UV+YBvJn9EfRFYWy4HT3TVDfH0nl1CO0lwOxIrt2gk9qjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/5.5.0/xterm.js" integrity="sha512-Gujw5GajF5is3nMoGv9X+tCMqePLL/60qvAv1LofUZTV9jK8ENbM9L+maGmOsNzuZaiuyc/fpph1KT9uR5w3CQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-    <title>2FA Bluetooth</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
+    <title>Debug</title>
 </head>
 
 <body>
 
-    <button id="buttonRequestPort">Request Serial Port</button>
-    <button id="buttonClear">Clear Terminal</button>
-    <button id="buttonReboot">Reboot ESP32</button>
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+            </ul>
+            <ul>
+                <li><button id="btnRequestPort">Request Serial Port</button></li>
+                <li><button id="btnReboot">Reboot ESP32</button></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="terminal"></div>
+    <main class="container">
 
-    <script>
-        var term = new Terminal();
-        var port;
+        <h1>Debug</h1>
 
-        term.open(document.getElementById('terminal'));
+        <h2>Terminal</h2>
+        <div id="terminal"></div>
+        <button id="btnClear">Clear Terminal</button>
 
-        navigator.serial.addEventListener("connect", (e) => {
-            // Connect to `e.target` or add it to a list of available ports.
-            console.log("Connected with port");
-        });
+        <h2>Participant Management</h2>
+        Here you can manage the participants of the study.
+        <h3>Register new Participant</h3>
+        <button id="btnRegisterParticipant">Register new Participant</button>
+        Current ID: <code id="participantId"></code>
 
-        navigator.serial.addEventListener("disconnect", (e) => {
-            // Remove `e.target` from the list of available ports.
-            console.log("Disconnected with port");
-        });
+        <h2>Password Hash Generator</h2>
+        <form id="generatePasswordHash">
+            <input type="text" id="username" placeholder="Username" autocomplete="username" hidden>
+            <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+            <input type="submit" value="Generate Hash">
+        </form>
+        Hash: <code id="hash"></code>
+    </main>
 
-        navigator.serial.getPorts().then((ports) => {
-            // Initialize the list of available ports with `ports` on page load.
-            if (ports.length === 0) {
-                return;
-            }
-            console.log("Ports: ", ports);
-            port = ports[0];
-            communicate();
-        });
-
-        buttonRequestPort.addEventListener("click", () => {
-            const usbVendorId = 4292;
-            const usbProductId = 60000;
-            navigator.serial
-                .requestPort({ filters: [{ usbVendorId, usbProductId }] })
-                .then(async (p) => {
-                    // Connect to `port` or add it to the list of available ports.
-                    port = p;
-                    communicate();
-                })
-                .catch((e) => {
-                    // The user didn't select a port.
-                });
-        });
-
-        buttonClear.addEventListener("click", () => {
-            term.clear();
-        });
-
-        buttonReboot.addEventListener("click", () => {
-            writeToPort("\x1B");
-        });
-
-        term.onData((data) => {
-            switch (data) {
-                case "\r":
-                    data = "\r\n";
-                    break;
-                case "\n":
-                    data = "\r\n";
-                    break;
-                case "\u007F":
-                    data = "\b \b";
-                    break;
-            }
-            console.log(data);
-            writeToPort(data);
-        });
-
-        function writeToPort(data) {
-            const encoder = new TextEncoder();
-            const writer = port.writable.getWriter();
-            writer.write(encoder.encode(data));
-            writer.releaseLock();
-        }
-
-        async function communicate() {
-            console.log("Connected with port")
-            console.log(port.getInfo());
-            await port.open({ baudRate: 115200 /* pick your baud rate */ });
-
-            while (port.readable) {
-                const reader = port.readable.getReader();
-                try {
-                    while (true) {
-                        const { value, done } = await reader.read();
-                        if (done) {
-                            // |reader| has been canceled.
-                            break;
-                        }
-                        // print characters to the console
-                        term.write(value);
-                        document.getElementById("console").innerText += String.fromCharCode(value);
-                    }
-                } catch (error) {
-                    // Handle |error|…
-                } finally {
-                    reader.releaseLock();
-                }
-            }
-        }
-
-    </script>
+    <script src="/webSerial.js"></script>
+    <script src="debug.js"></script>
 
 </body>
 
