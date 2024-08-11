@@ -16,8 +16,17 @@ function updateContent(langData) {
             return;
         }
         element.firstChild.textContent = langData[key];
-        for (let i = 1; i <= childs; i++) {
-            element.childNodes[i].after(langData[key + "_ac" + i]);
+        for (let i = 2; i <= childs * 2; i += 2) {
+            let j = i / 2;
+            if (i < element.childNodes.length) {
+                if (element.childNodes[i].nodeType === 3) { // Text node
+                    element.childNodes[i].textContent = langData[key + "_ac" + j];
+                } else {
+                    element.childNodes[i].before(langData[key + "_ac" + j]);
+                }
+            } else {
+                element.append(langData[key + "_ac" + j]);
+            }
         }
     });
 }
@@ -36,7 +45,7 @@ async function fetchLanguageData(lang) {
 // Function to change language
 async function changeLanguage(lang) {
     setLanguagePreference(lang);
-    
+
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
 }

@@ -14,7 +14,8 @@
     "loading": "Loading…",
     "pairing_code": "Pairing code",
     "remote_control": "Remote control",
-    "remote_control_explanation": "By pressing the \"Start remote control\" button, you can control your smartphone remotely via the browser. You can end remote control at any time by pressing the ESC key on the keyboard.",
+    "remote_control_explanation": "By pressing the \"Start remote control\" button, you can control your smartphone remotely via the browser. You can cancel remote control at any time by pressing the ",
+    "remote_control_explanation_ac1": "-key on the keyboard.",
     "task": "Task",
     "task_description": "Your task is to search for the YouTube video shown below on your smartphone. You can use the YouTube app or open the YouTube website in your browser. Once you have found the video, start it and pause it after 10 seconds. When completing the task, please only use the browser to control your smartphone and do not make any entries on the smartphone itself.",
     "title": "Remote control"
