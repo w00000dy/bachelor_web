@@ -7,7 +7,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <title data-i18n="title"> </title>
     <style>
         iframe {
@@ -18,32 +17,34 @@
 </head>
 
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
-        </ul>
-        <ul>
-            <li><button class="secondary" data-i18n="btn_cancel_experiment"> </button></li>
-        </ul>
-        <ul>
-            <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
-            <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
-        </ul>
-    </nav>
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+            </ul>
+            <ul>
+                <li><button class="secondary" data-i18n="btn_cancel_experiment"> </button></li>
+            </ul>
+            <ul>
+                <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
+                <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="container">
 
-        <h2 data-i18n="remote_control"> </h1>
+        <h2 data-i18n="remote_control"> </h2>
         <br>
 
-        <p data-i18n="remote_control_explanation"> </p>
+        <p data-i18n="remote_control_explanation" data-i18n-childs="1"> <kbd>ESC</kbd></p>
 
         <button id="btnStartRemoteControl" data-i18n="btn_start_remote_control"> </button>
 
         <h2 data-i18n="task"> </h2>
         <p data-i18n="task_description"> </p>
         <p>
-            <iframe id="ytVideo" width="480" height="270"></iframe>
+            <iframe id="ytVideo" width="480" height="270" data-i18n="loading"> </iframe>
         </p>
         <button id="btnTaskDone" data-i18n="btn_task_done"> </button>
 
