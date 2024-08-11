@@ -16,12 +16,14 @@ restartESP();
 loadYoutubeVideo();
 
 function closeDialog() {
+    logParticipantAction(4);
     window.location.href = "/";
 }
 
 webSerialPort.getPort().then((port) => {
     port.addEventListener('online', (e) => {
         if (e.detail.startsWith("Connected")) {
+            logParticipantAction(1);
             connected = true;
         }
         if (e.detail.startsWith("The passkey YES/NO number:")) {
@@ -38,11 +40,13 @@ webSerialPort.getPort().then((port) => {
             dialogBtnGoToTask.hidden = false;
             setTimeout(() => {
                 if (connected) {
+                    logParticipantAction(5);
                     dialogBtnGoToTask.disabled = false;
                 }
             }, 3000);
         }
         if (e.detail.startsWith("Disconnected")) {
+            logParticipantAction(2);
             connected = false;
             btDialog.show();
             restartESP();
@@ -62,10 +66,12 @@ function restartESP() {
 }
 
 function goToTask() {
+    logParticipantAction(3);
     btDialog.close();
 }
 
 async function startRemoteControl() {
+    logParticipantAction(6);
     canvas.requestPointerLock();
 }
 
@@ -79,6 +85,7 @@ function pointerLockChange() {
         document.addEventListener("mousedown", sendMouseClick);
         document.addEventListener("mouseup", sendMouseClick);
     } else {
+        logParticipantAction(7);
         console.log("The pointer lock status is now unlocked");
         document.removeEventListener("mousemove", sendMousePosition);
         document.removeEventListener("keydown", sendKey);
@@ -201,3 +208,13 @@ function loadYoutubeVideo() {
     const url = new URL(videoId, "https://www.youtube.com/embed/");
     ytVideo.src = url;
 }
+
+btnTaskNotDone.addEventListener("click", () => {
+    logParticipantAction(9);
+    window.location.href = "/survey";
+});
+
+btnTaskDone.addEventListener("click", () => {
+    logParticipantAction(8);
+    window.location.href = "/survey";
+});

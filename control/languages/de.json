@@ -2,6 +2,7 @@
     "btn_cancel_experiment": "Experiment abbrechen",
     "btn_start_remote_control": "Starte Fernsteuerung",
     "btn_task_done": "Aufgabe erledigt",
+    "btn_task_not_done": "Aufgabe konnte nicht erledigt werden",
     "dialog_bt_guide": "Anleitung",
     "dialog_bt_guide_step1": "Öffne die Bluetooth Einstellungen auf deinem Smartphone.",
     "dialog_bt_guide_step2": "Aktiviere Bluetooth.",

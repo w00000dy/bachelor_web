@@ -2,6 +2,7 @@
     "btn_cancel_experiment": "Cancel experiment",
     "btn_start_remote_control": "Start remote control",
     "btn_task_done": "Task completed",
+    "btn_task_not_done": "Task could not be completed",
     "dialog_bt_guide": "Guide",
     "dialog_bt_guide_step1": "Open the Bluetooth settings on your smartphone.",
     "dialog_bt_guide_step2": "Enable Bluetooth.",

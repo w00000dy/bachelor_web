@@ -15,8 +15,7 @@ if ($conn->connect_error) {
 // sql to create table Participants
 $sql = "CREATE TABLE Participants (
 id CHAR(13) NOT NULL PRIMARY KEY,
-reg_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)";
+reg_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table Participants created successfully\n";
@@ -79,6 +78,19 @@ $sql = "CREATE TABLE bt_devices (
 
 if ($conn->query($sql) === TRUE) {
     echo "Table bt_devices created successfully\n";
+} else {
+    echo "Error creating table: " . $conn->error . "\n";
+}
+
+// sql to create table action_log
+$sql = "CREATE TABLE action_log (
+    participant CHAR(13) NOT NULL,
+    action TINYINT UNSIGNED NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (participant) REFERENCES Participants(id))";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table action_log created successfully\n";
 } else {
     echo "Error creating table: " . $conn->error . "\n";
 }
