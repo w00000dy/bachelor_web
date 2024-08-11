@@ -24,18 +24,43 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error . "\n";
 }
 
+// sql to create table Survey
+$sql = "CREATE TABLE Survey (
+participant CHAR(13) NOT NULL PRIMARY KEY,
+age TINYINT UNSIGNED,
+gender BOOLEAN,
+num_electronic_devices TINYINT UNSIGNED,
+regular_tablet_laptop_use BOOLEAN,
+technical_experience TINYINT UNSIGNED,
+encountered_problems BOOLEAN,
+bt_pairing_problems BOOLEAN,
+problems_explaination TEXT,
+situation_already_encountered TINYINT UNSIGNED,
+know_pairing_code BOOLEAN,
+improvements TEXT,
+additional_thoughts TEXT,
+FOREIGN KEY (participant) REFERENCES Participants(id))";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table Survey created successfully\n";
+} else {
+    echo "Error creating table: " . $conn->error . "\n";
+}
+
+
 // sql to create table electronic_devices_main_application
 $sql = "CREATE TABLE electronic_devices_main_application (
-id CHAR(13) NOT NULL PRIMARY KEY REFERENCES Participants(id),
-social_media BOOLEAN NOT NULL,
-communication BOOLEAN NOT NULL,
-entertainment BOOLEAN NOT NULL,
-work_and_productivity BOOLEAN NOT NULL,
-information_search BOOLEAN NOT NULL,
-organization_and_planning BOOLEAN NOT NULL,
-navigation_and_maps BOOLEAN NOT NULL,
-health_and_fitness BOOLEAN NOT NULL,
-smart_home BOOLEAN NOT NULL)";
+    participant CHAR(13) NOT NULL PRIMARY KEY,
+    social_media BOOLEAN NOT NULL,
+    communication BOOLEAN NOT NULL,
+    entertainment BOOLEAN NOT NULL,
+    work_and_productivity BOOLEAN NOT NULL,
+    information_search BOOLEAN NOT NULL,
+    organization_and_planning BOOLEAN NOT NULL,
+    navigation_and_maps BOOLEAN NOT NULL,
+    health_and_fitness BOOLEAN NOT NULL,
+    smart_home BOOLEAN NOT NULL,
+    FOREIGN KEY (participant) REFERENCES Survey(participant))";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table electronic_devices_main_application created successfully\n";
@@ -45,37 +70,15 @@ if ($conn->query($sql) === TRUE) {
 
 // sql to create table bt_devices
 $sql = "CREATE TABLE bt_devices (
-    id CHAR(13) NOT NULL PRIMARY KEY REFERENCES Participants(id),
-    smartwatches_fitness_trackers BOOLEAN NOT NULL,
-    headphones BOOLEAN NOT NULL,
-    keyboard_mouse BOOLEAN NOT NULL,
-    others BOOLEAN NOT NULL)";
+        participant CHAR(13) NOT NULL PRIMARY KEY,
+        smartwatches_fitness_trackers BOOLEAN NOT NULL,
+        headphones BOOLEAN NOT NULL,
+        keyboard_mouse BOOLEAN NOT NULL,
+        others BOOLEAN NOT NULL,
+        FOREIGN KEY (participant) REFERENCES Survey(participant))";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table bt_devices created successfully\n";
-} else {
-    echo "Error creating table: " . $conn->error . "\n";
-}
-
-// sql to create table Survey
-$sql = "CREATE TABLE Survey (
-id CHAR(13) NOT NULL PRIMARY KEY REFERENCES Participants(id),
-age TINYINT UNSIGNED,
-gender BOOLEAN,
-num_electronic_devices TINYINT UNSIGNED,
-regularly_tablet_laptop_use BOOLEAN,
-electronic_devices_main_application INT,
-technical_experience TINYINT UNSIGNED,
-encountered_problems BOOLEAN,
-bt_pairing_problems BOOLEAN,
-problems_explaination TEXT,
-situation_already_encountered TINYINT UNSIGNED,
-know_pairing_code BOOLEAN,
-improvements TEXT,
-additional_thoughts TEXT)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Table Survey created successfully\n";
 } else {
     echo "Error creating table: " . $conn->error . "\n";
 }

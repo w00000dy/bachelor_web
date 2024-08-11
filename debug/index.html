@@ -19,6 +19,14 @@
                 <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
             </ul>
             <ul>
+                <li>
+                    <form>
+                        <input type="text" id="username" placeholder="Username" autocomplete="username" hidden>
+                        <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+                    </form>
+                </li>
+            </ul>
+            <ul>
                 <li><button id="btnRequestPort">Request Serial Port</button></li>
                 <li><button id="btnReboot">Reboot ESP32</button></li>
             </ul>
@@ -34,15 +42,15 @@
         <button id="btnClear">Clear Terminal</button>
 
         <h2>Participant Management</h2>
-        Here you can manage the participants of the study.
+        Here you can manage the participants of the study.<br>
+        Current ID: <code id="participantId"></code>
         <h3>Register new Participant</h3>
         <button id="btnRegisterParticipant">Register new Participant</button>
-        Current ID: <code id="participantId"></code>
 
         <h2>Password Hash Generator</h2>
         <form id="generatePasswordHash">
-            <input type="text" id="username" placeholder="Username" autocomplete="username" hidden>
-            <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+            <input type="text" id="newUsername" placeholder="Username" autocomplete="username" hidden>
+            <input type="password" id="newPassword" placeholder="Password" autocomplete="new-password">
             <input type="submit" value="Generate Hash">
         </form>
         Hash: <code id="hash"></code>

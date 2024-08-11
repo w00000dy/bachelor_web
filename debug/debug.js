@@ -2,6 +2,8 @@ var term = new Terminal();
 var webSerialPort = new WebSerialPort();
 var port;
 
+loadParticipantID();
+
 term.open(document.getElementById('terminal'));
 
 btnRequestPort.addEventListener("click", () => {
@@ -24,29 +26,8 @@ btnRequestPort.addEventListener("click", () => {
         });
 });
 
-btnClear.addEventListener("click", () => {
-    term.clear();
-});
-
 btnReboot.addEventListener("click", () => {
     webSerialPort.writeToPort("\x1B");
-});
-
-generatePasswordHash.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    const myRequest = new Request("passwordHash.php", {
-        method: "POST",
-        body: JSON.stringify({ password: password.value }),
-        headers: myHeaders,
-    });
-
-    const response = await fetch(myRequest);
-    response.text().then((data) => {
-        hash.innerText = data;
-    });
 });
 
 term.onData((data) => {
@@ -70,3 +51,63 @@ webSerialPort.getPort().then((port) => {
         term.write(e.detail);
     });
 });
+
+btnClear.addEventListener("click", () => {
+    term.clear();
+});
+
+generatePasswordHash.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("password", newPassword.value);
+
+    const myRequest = new Request("passwordHash.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+    response.text().then((data) => {
+        hash.innerText = data;
+    });
+});
+
+btnRegisterParticipant.addEventListener("click", async () => {
+    const formData = new FormData();
+    formData.append("password", password.value);
+
+    const myRequest = new Request("registerParticipant.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+
+    if (!response.ok) {
+        alert("Error: " + response.status + "\n" + response.statusText);
+        return;
+    }
+
+    loadParticipantID();
+});
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function loadParticipantID() {
+    participantId.innerText = getCookie("participant");
+}
