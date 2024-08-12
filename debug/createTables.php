@@ -1,16 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-header('Content-Type: text/plain');
-require_once '../config.php';
-
-
-// Create connection
-$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $database);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once '../mysql.php';
 
 // sql to create table Participants
 $sql = "CREATE TABLE Participants (
@@ -91,6 +80,22 @@ $sql = "CREATE TABLE action_log (
 
 if ($conn->query($sql) === TRUE) {
     echo "Table action_log created successfully\n";
+} else {
+    echo "Error creating table: " . $conn->error . "\n";
+}
+
+// sql to create table Screenshots
+$sql = "CREATE TABLE Screenshots (
+    participant CHAR(13) NOT NULL PRIMARY KEY,
+    screenshot MEDIUMBLOB NOT NULL,
+    filename TINYTEXT NOT NULL,
+    device_model TINYTEXT NOT NULL,
+    user_agent TEXT NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (participant) REFERENCES Participants(id))";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table Screenshots created successfully\n";
 } else {
     echo "Error creating table: " . $conn->error . "\n";
 }

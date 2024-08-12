@@ -1,13 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-require_once 'config.php';
-
-$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'mysql.php';
 
 $stmt = $conn->prepare("INSERT INTO action_log (participant, action) VALUES (?, ?)");
 $stmt->bind_param("si", $uniqid, $action);

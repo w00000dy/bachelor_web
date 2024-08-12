@@ -8,6 +8,7 @@ skipSurvey.addEventListener("click", () => {
 
 submitSurvey.addEventListener("click", (e) => {
   logParticipantAction(10);
+  window.location.href = "/thanks/";
 });
 
 formSurvey.addEventListener("submit", (e) => {
@@ -21,5 +22,5 @@ formSurvey.addEventListener("submit", (e) => {
   });
 
   fetch(request);
-  window.location.href = "/thanks";
+  window.location.href = "/thanks/";
 });

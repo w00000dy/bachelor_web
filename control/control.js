@@ -202,7 +202,7 @@ function sendKey(e) {
     webSerialPort.writeToPort(c);
 }
 
-function loadYoutubeVideo() {
+async function loadYoutubeVideo() {
     const videoIds = ["LXb3EKWsInQ", "1La4QzGeaaQ", "CHSnz0bCaUk"];
     const videoId = videoIds[Math.floor(Math.random() * videoIds.length)];
     const url = new URL(videoId, "https://www.youtube.com/embed/");

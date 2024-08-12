@@ -1,6 +1,11 @@
 {
+    "device_model": "Device model",
+    "device_model_input": "A3090, SM-S928B or Samsung Galaxy S24 Ultra",
+    "error": "Error: ",
     "screenshot": "Screenshot",
+    "screenshot_success": "Screenshot successfully saved!",
     "screenshot_text": "Please upload the screenshot of the pairing dialog here.",
     "select_image": "Select image:",
-    "title": "Screenshot"
+    "title": "Screenshot",
+    "upload_screenshot": "Upload screenshot"
 }

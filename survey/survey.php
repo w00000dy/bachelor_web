@@ -1,30 +1,5 @@
 <?php
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
-function parsePost($name)
-{
-    if (isset($_POST[$name]) && $_POST[$name] !== '') {
-        return $_POST[$name];
-    }
-    return null;
-}
-
-function parseSelectPost($name)
-{
-    if (isset($_POST[$name])) {
-        return 1;
-    }
-    return 0;
-}
-
-
-require_once '../config.php';
-
-$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once '../mysql.php';
 
 $stmt = $conn->prepare("INSERT INTO Survey (participant, age, gender, num_electronic_devices, regular_tablet_laptop_use, technical_experience, encountered_problems, bt_pairing_problems, problems_explaination, situation_already_encountered, know_pairing_code, improvements, additional_thoughts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("siiiiiiisiiss", $uniqid, $age, $gender, $num_electronic_devices, $regular_tablet_laptop_use, $technical_experience, $encountered_problems, $bt_pairing_problems, $problems_explaination, $situation_already_encountered, $know_pairing_code, $improvements, $additional_thoughts);

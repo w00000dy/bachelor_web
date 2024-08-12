@@ -1,6 +1,11 @@
 {
+    "device_model": "Gerätemodell",
+    "device_model_input": "A3090, SM-S928B oder Samsung Galaxy S24 Ultra",
+    "error": "Fehler: ",
     "screenshot": "Screenshot",
+    "screenshot_success": "Screenshot erfolgreich gespeichert!",
     "screenshot_text": "Bitte lade hier den Screenshot von dem Kopplungsdialog hoch.",
     "select_image": "Bild auswählen:",
-    "title": "Screenshot"
+    "title": "Screenshot",
+    "upload_screenshot": "Screenshot hochladen"
 }

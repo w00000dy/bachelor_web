@@ -45,10 +45,12 @@
             <a id="url"></a>
         </div>
         <br>
-        <form>
-            <label for="img" data-i18n="select_image"> </label>
-            <input type="file" id="img" name="img" accept="image/*">
-            <input type="submit">
+        <form id="formScreenshot" action="screenshot.php" method="post" enctype="multipart/form-data">
+            <label for="screenshot" data-i18n="select_image"> </label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*">
+            <label for="deviceModel" data-i18n="device_model"> </label>
+            <input type="text" id="deviceModel" name="device_model" data-i18n="device_model_input">
+            <button type="submit" data-i18n="upload_screenshot"> </button>
         </form>
 
     </main>

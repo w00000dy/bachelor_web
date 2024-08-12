@@ -1,3 +1,5 @@
+var langData = {};
+
 // Function to update content based on selected language
 function updateContent(langData) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -12,7 +14,11 @@ function updateContent(langData) {
         }
 
         if (element.tagName === "INPUT") {
-            element.value = langData[key];
+            if (element.type === "text") {
+                element.placeholder = langData[key];
+            } else {
+                element.value = langData[key];
+            }
             return;
         }
         element.firstChild.textContent = langData[key];
@@ -46,13 +52,13 @@ async function fetchLanguageData(lang) {
 async function changeLanguage(lang) {
     setLanguagePreference(lang);
 
-    const langData = await fetchLanguageData(lang);
+    langData = await fetchLanguageData(lang);
     updateContent(langData);
 }
 
 // Call updateContent() on page load
 window.onload = async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
-    const langData = await fetchLanguageData(userPreferredLanguage);
+    langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
 };
