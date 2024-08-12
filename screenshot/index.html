@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
+    <title data-i18n="title"> </title>
+    <style>
+        .qrcode {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qrcode #url {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav>
+            <ul>
+                <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
+            </ul>
+            <ul>
+                <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
+                <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h1 data-i18n="screenshot"> </h1>
+        <br>
+        <p data-i18n="screenshot_text"> </p>
+
+        <div class="qrcode">
+            <div id="qrcode"></div>
+            <a id="url"></a>
+        </div>
+        <br>
+        <form>
+            <label for="img" data-i18n="select_image"> </label>
+            <input type="file" id="img" name="img" accept="image/*">
+            <input type="submit">
+        </form>
+
+    </main>
+
+    <script src="/i18n.js"></script>
+    <script src="qrcode.min.js"></script>
+    <script src="screenshot.js"></script>
+</body>
+
+</html>

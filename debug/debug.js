@@ -111,3 +111,7 @@ function getCookie(cname) {
 function loadParticipantID() {
     participantId.innerText = getCookie("participant");
 }
+
+btnScreenshotUpload.addEventListener("click", () => {
+    window.location.href = "/screenshot/?uid=" + getCookie("participant");
+});
