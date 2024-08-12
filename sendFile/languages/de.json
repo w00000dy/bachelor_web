@@ -1,0 +1,19 @@
+{
+    "btn_cancel_experiment": "Experiment abbrechen",
+    "btn_task_done": "Aufgabe erledigt",
+    "btn_task_not_done": "Aufgabe konnte nicht erledigt werden",
+    "dialog_bt_guide": "Anleitung",
+    "dialog_bt_guide_step1": "Öffne die Bluetooth Einstellungen auf deinem Smartphone.",
+    "dialog_bt_guide_step2": "Aktiviere Bluetooth.",
+    "dialog_bt_guide_step3": "Verbinde dein Smartphone mit dem Gerät mit dem Namen ",
+    "dialog_btn_cancel": "Abbrechen",
+    "dialog_btn_go_to_task": "Zur Aufgabe",
+    "dialog_btn_waiting_for_connection": "Warte auf Verbindung…",
+    "dialog_header": "🛜 Bluetooth Verbindung",
+    "dialog_text": "Um die Aufgabe zu starten, musst du zuerst dein Smartphone per Bluetooth mit dem Browser verbinden.",
+    "loading": "Lade…",
+    "pairing_code": "Kopplungscode",
+    "task": "Aufgabe",
+    "task_description": "Deine Aufgabe ist es, eine Datei per Bluetooth an den Browser zu senden. Falls du aktuell nicht mehr die Webseite geöffnet hast, gehe zurück zur Webseite. Alternativ findest du auch auf dem Startbildschirm des Smartphones einen Link zur Webseite. Mache nun ein Foto vom Raum, indem du die Schaltflächen unten verwendest und sende es per Bluetooth an den Browser.",
+    "title": "Datei senden"
+}

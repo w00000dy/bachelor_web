@@ -8,12 +8,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
     <title data-i18n="title"> </title>
-    <style>
-        iframe {
-            pointer-events: none;
-            user-select: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -34,23 +28,11 @@
 
     <main class="container">
 
-        <h2 data-i18n="remote_control"> </h2>
-        <br>
-
-        <p data-i18n="remote_control_explanation" data-i18n-childs="1"> <kbd>ESC</kbd></p>
-
-        <button id="btnStartRemoteControl" data-i18n="btn_start_remote_control"> </button>
-
         <h2 data-i18n="task"> </h2>
         <p data-i18n="task_description"> </p>
-        <p>
-            <iframe id="ytVideo" width="480" height="270" data-i18n="loading"> </iframe>
-        </p>
 
         <button id="btnTaskNotDone" class="secondary" data-i18n="btn_task_not_done"> </button>
         <button id="btnTaskDone" data-i18n="btn_task_done"> </button>
-
-        <canvas id="canvas" hidden></canvas>
 
         <dialog id="btDialog" open>
             <article>
@@ -87,7 +69,6 @@
     <script src="/webSerial.js"></script>
     <script src="/logger.js"></script>
     <script src="/task.js"></script>
-    <script src="control.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@ var term = new Terminal();
 var webSerialPort = new WebSerialPort();
 var port;
 
-loadParticipantID();
+loadCurrentParticipant();
 
 term.open(document.getElementById('terminal'));
 
@@ -76,6 +76,7 @@ generatePasswordHash.addEventListener("submit", async (e) => {
 btnRegisterParticipant.addEventListener("click", async () => {
     const formData = new FormData();
     formData.append("password", password.value);
+    formData.append("task", task.value);
 
     const myRequest = new Request("registerParticipant.php", {
         method: "POST",
@@ -89,7 +90,7 @@ btnRegisterParticipant.addEventListener("click", async () => {
         return;
     }
 
-    loadParticipantID();
+    loadCurrentParticipant();
 });
 
 function getCookie(cname) {
@@ -108,10 +109,78 @@ function getCookie(cname) {
     return "";
 }
 
-function loadParticipantID() {
+function loadCurrentParticipant() {
     participantId.innerText = getCookie("participant");
+    participantTask.innerText = getCookie("task");
+}
+
+async function setParticipantID(id) {
+    const formData = new FormData();
+    formData.append("password", password.value);
+    formData.append("id", id);
+
+    const myRequest = new Request("setParticipantID.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+
+    if (!response.ok) {
+        alert("Error: " + response.status + "\n" + response.statusText);
+        return;
+    }
+    
+    loadCurrentParticipant();
 }
 
 btnScreenshotUpload.addEventListener("click", () => {
     window.location.href = "/screenshot/?uid=" + getCookie("participant");
+});
+
+btnLoadParticipants.addEventListener("click", async () => {
+    const formData = new FormData();
+    formData.append("password", password.value);
+
+    const myRequest = new Request("getParticipants.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+
+    if (!response.ok) {
+        alert("Error: " + response.status + "\n" + response.statusText);
+        return;
+    }
+
+    response.json().then((data) => {
+        participantList.innerHTML = "";
+        data.forEach((participant) => {
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            td1.innerText = participant.id;
+            const td2 = document.createElement("td");
+            td2.innerText = participant.task;
+            const td3 = document.createElement("td");
+            td3.innerText = participant.reg_date;
+            const td4 = document.createElement("td");
+            const setID = document.createElement("a");
+            setID.innerText = "✏️";
+            setID.addEventListener("click", () => {
+                setParticipantID(participant.id);
+            });
+            td4.appendChild(setID);
+            const td5 = document.createElement("td");
+            const del = document.createElement("a");
+            del.innerText = "🗑️";
+            td5.appendChild(del);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            participantList.appendChild(tr);
+        });
+    });
 });

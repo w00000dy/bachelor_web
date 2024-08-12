@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -45,8 +46,37 @@
         <h2>Participant Management</h2>
         Here you can manage the participants of the study.<br>
         Current ID: <code id="participantId"></code>
+        Current Task: <code id="participantTask"></code>
         <h3>Register new Participant</h3>
-        <button id="btnRegisterParticipant">Register new Participant</button>
+        <div class="grid">
+            <div>
+                <button id="btnRegisterParticipant">Register new Participant</button>
+            </div>
+            <div>
+                <select id="task" required>
+                    <option selected value="random">
+                        Random Task
+                    </option>
+                    <option value="0">control</option>
+                    <option value="1">sendFile</option>
+                </select>
+            </div>
+        </div>
+        <h3>Participant List</h3>
+        <button id="btnLoadParticipants">Load Participants</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>task</th>
+                    <th>reg_date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="participantList">
+            </tbody>
+        </table>
 
         <h2>Password Hash Generator</h2>
         <form id="generatePasswordHash">

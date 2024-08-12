@@ -1,0 +1,7 @@
+{
+    "select_file": "Take a photo",
+    "task": "Task",
+    "task_description": "First follow the instructions on the computer to connect this device to the computer via Bluetooth. Then take a photo of the room you are in and transfer it to the computer via Bluetooth. Use the buttons below to do this.",
+    "title": "File send",
+    "upload_file": "Send file via Bluetooth"
+}

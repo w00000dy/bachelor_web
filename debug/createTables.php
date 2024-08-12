@@ -4,6 +4,7 @@ require_once '../mysql.php';
 // sql to create table Participants
 $sql = "CREATE TABLE Participants (
 id CHAR(13) NOT NULL PRIMARY KEY,
+task TINYINT(1) NOT NULL DEFAULT 0,
 reg_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)";
 
 if ($conn->query($sql) === TRUE) {

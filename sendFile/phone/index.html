@@ -17,9 +17,6 @@
                 <li><img src="/TUM_Web_Logo_blau.svg" width="100"></li>
             </ul>
             <ul>
-                <li><button id="btnCancelExperiment" class="secondary" data-i18n="btn_cancel_experiment"> </button></li>
-            </ul>
-            <ul>
                 <li><a onclick="changeLanguage('de')">🇩🇪</a></li>
                 <li><a onclick="changeLanguage('en')">🇺🇸</a></li>
             </ul>
@@ -28,25 +25,19 @@
 
     <main class="container">
 
-        <h1 data-i18n="web_bluetooth_usability_test"> </h1>
-        <br>
-        <details>
-            <summary data-i18n="user_study_about"> </summary>
-            <p id="user_study_about_text"> </p>
-        </details>
-        <hr>
-        <details open>
-            <summary data-i18n="summary"> </summary>
-            <p data-i18n="summary_text"> </p>
-        </details>
-        <br>
-        <button id="btnStartExperiment" data-i18n="btn_start_experiment"> </button>
+        <h2 data-i18n="task"> </h2>
+        <p data-i18n="task_description"> </p>
+
+        <form id="formFile" action="file.php" method="post" enctype="multipart/form-data">
+            <label for="file" data-i18n="select_file"> </label>
+            <input type="file" id="file" name="file" accept="image/*">
+            <button type="submit" data-i18n="upload_file"> </button>
+        </form>
 
     </main>
 
     <script src="/i18n.js"></script>
-    <script src="/logger.js"></script>
-    <script src="index.js"></script>
+    <script src="phone.js"></script>
 </body>
 
 </html>
