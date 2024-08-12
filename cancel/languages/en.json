@@ -1,7 +1,7 @@
 {
     "abort_really": "Do you really want to cancel? 😢",
-    "abort_text": "Wenn du wirklich abbrechen möchtest, klicke auf „Abbrechen“. Ansonsten kannst du auf „Zurück zum Experiment“ klicken, um fortzufahren.",
-    "back_to_experiment": "Zurück zum Experiment",
-    "cancel_experiment": "Experiment abbrechen",
-    "title": "🛑 Experiment abbrechen"
+    "abort_text": "If you really want to cancel, click on \"Cancel experiment\". Otherwise, you can click on \"Back to experiment\" to continue.",
+    "back_to_experiment": "Back to experiment",
+    "cancel_experiment": "Cancel experiment",
+    "title": "🛑 Cancel experiment"
 }
