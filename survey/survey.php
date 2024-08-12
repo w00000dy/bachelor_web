@@ -1,4 +1,6 @@
 <?php
+ error_reporting(E_ALL);
+ ini_set("display_errors", 1);
 function parsePost($name)
 {
     if (isset($_POST[$name]) && $_POST[$name] !== '') {
@@ -76,3 +78,5 @@ $stmt->execute();
 $stmt->close();
 
 $conn->close();
+
+echo 'Thank you for participating in our survey!';
