@@ -71,5 +71,5 @@ navigator.serial.addEventListener("connect", (e) => {
 
 navigator.serial.addEventListener("disconnect", (e) => {
     console.log("Disconnected with port");
-    window.location.href = "/error";
+    window.location.href = "/error/";
 });

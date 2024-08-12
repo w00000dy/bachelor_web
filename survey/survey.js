@@ -2,12 +2,13 @@ rangeTechEx.addEventListener("input", (event) => {
   rangeTechExVal.textContent = event.target.value;
 });
 
-skipSurvey.addEventListener("click", () => {
-  logParticipantAction(11);
+skipSurvey.addEventListener("click", async () => {
+  await logParticipantAction(11);
+  window.location.href = "/thanks/";
 });
 
-submitSurvey.addEventListener("click", (e) => {
-  logParticipantAction(10);
+submitSurvey.addEventListener("click", async (e) => {
+  await logParticipantAction(10);
   window.location.href = "/thanks/";
 });
 

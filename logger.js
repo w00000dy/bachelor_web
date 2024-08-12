@@ -31,7 +31,7 @@ function actionIdToString(actionId) {
     }
 }
 
-function logParticipantAction(actionId) {
+async function logParticipantAction(actionId) {
     console.log(`🕵️ Participant ${actionIdToString(actionId)}.`);
 
     const formData = new FormData();
@@ -42,5 +42,5 @@ function logParticipantAction(actionId) {
         body: formData
     });
 
-    fetch(myRequest);
+    await fetch(myRequest);
 }

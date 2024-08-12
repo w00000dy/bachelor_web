@@ -15,15 +15,15 @@ dialogBtnGoToTask.addEventListener('click', goToTask);
 restartESP();
 loadYoutubeVideo();
 
-function closeDialog() {
-    logParticipantAction(4);
+async function closeDialog() {
+    await logParticipantAction(4);
     window.location.href = "/";
 }
 
 webSerialPort.getPort().then((port) => {
-    port.addEventListener('online', (e) => {
+    port.addEventListener('online', async (e) => {
         if (e.detail.startsWith("Connected")) {
-            logParticipantAction(1);
+            await logParticipantAction(1);
             connected = true;
         }
         if (e.detail.startsWith("The passkey YES/NO number:")) {
@@ -38,15 +38,15 @@ webSerialPort.getPort().then((port) => {
         if (e.detail.startsWith("Authentication Complete") && connected) {
             dialogBtnWaitingForConnection.hidden = true;
             dialogBtnGoToTask.hidden = false;
-            setTimeout(() => {
+            setTimeout(async () => {
                 if (connected) {
-                    logParticipantAction(5);
+                    await logParticipantAction(5);
                     dialogBtnGoToTask.disabled = false;
                 }
             }, 3000);
         }
         if (e.detail.startsWith("Disconnected")) {
-            logParticipantAction(2);
+            await logParticipantAction(2);
             connected = false;
             btDialog.show();
             restartESP();
@@ -65,17 +65,17 @@ function restartESP() {
     webSerialPort.writeToPort('\x1B');
 }
 
-function goToTask() {
-    logParticipantAction(3);
+async function goToTask() {
+    await logParticipantAction(3);
     btDialog.close();
 }
 
 async function startRemoteControl() {
-    logParticipantAction(6);
+    await logParticipantAction(6);
     canvas.requestPointerLock();
 }
 
-function pointerLockChange() {
+async function pointerLockChange() {
     if (document.pointerLockElement === canvas) {
         console.log("The pointer lock status is now locked");
         document.addEventListener("mousemove", sendMousePosition);
@@ -85,7 +85,7 @@ function pointerLockChange() {
         document.addEventListener("mousedown", sendMouseClick);
         document.addEventListener("mouseup", sendMouseClick);
     } else {
-        logParticipantAction(7);
+        await logParticipantAction(7);
         console.log("The pointer lock status is now unlocked");
         document.removeEventListener("mousemove", sendMousePosition);
         document.removeEventListener("keydown", sendKey);
@@ -209,12 +209,12 @@ async function loadYoutubeVideo() {
     ytVideo.src = url;
 }
 
-btnTaskNotDone.addEventListener("click", () => {
-    logParticipantAction(9);
-    window.location.href = "/survey";
+btnTaskNotDone.addEventListener("click", async () => {
+    await logParticipantAction(9);
+    window.location.href = "/survey/";
 });
 
-btnTaskDone.addEventListener("click", () => {
+btnTaskDone.addEventListener("click", async () => {
     logParticipantAction(8);
-    window.location.href = "/survey";
+    window.location.href = "/survey/";
 });
