@@ -6,17 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.red.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
     <title data-i18n="title"> </title>
-    <style>
-        body {
-            min-height: 100vh;
-        }
-    </style>
 </head>
 
-<body class="pico-background-red-500">
+<body>
     <header class="container-fluid">
         <nav>
             <ul>
@@ -31,17 +25,17 @@
 
     <main class="container">
 
-        <h1 class="pico-color-slate-50" data-i18n="error"> </h1>
+        <h1 data-i18n="abort_really"> </h1>
+        <br>
+        <p data-i18n="abort_text"> </p>
 
-        <p class="pico-color-slate-50" data-i18n="error_text"> </p>
+        <button id="btnBackToExperiment" data-i18n="back_to_experiment"> </button>
+        <button id="btnCancelExperiment" class="secondary" data-i18n="cancel_experiment"> </button>
 
     </main>
 
     <script src="/i18n.js"></script>
-    <script src="/logger.js"></script>
-    <script>
-        logParticipantAction(254);
-    </script>
+    <script src="cancel.js"></script>
 </body>
 
 </html>

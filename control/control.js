@@ -7,6 +7,7 @@ const webSerialPort = new WebSerialPort();
 const canvas = document.getElementById('canvas');
 
 btnStartRemoteControl.addEventListener('click', startRemoteControl);
+btnCancelExperiment.addEventListener('click', cancelExperiment);
 document.addEventListener("pointerlockchange", pointerLockChange);
 dialogClose.addEventListener('click', closeDialog);
 dialogBtnCancel.addEventListener('click', closeDialog);
@@ -218,3 +219,7 @@ btnTaskDone.addEventListener("click", async () => {
     logParticipantAction(8);
     window.location.href = "/survey/";
 });
+
+function cancelExperiment() {
+    window.location.href = "/cancel/";
+}

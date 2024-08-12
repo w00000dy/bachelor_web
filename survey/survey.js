@@ -1,3 +1,9 @@
+btnCancelExperiment.addEventListener('click', cancelExperiment);
+
+function cancelExperiment() {
+  window.location.href = "/cancel/";
+}
+
 rangeTechEx.addEventListener("input", (event) => {
   rangeTechExVal.textContent = event.target.value;
 });
@@ -7,14 +13,10 @@ skipSurvey.addEventListener("click", async () => {
   window.location.href = "/thanks/";
 });
 
-submitSurvey.addEventListener("click", async (e) => {
-  await logParticipantAction(10);
-  window.location.href = "/thanks/";
-});
-
-formSurvey.addEventListener("submit", (e) => {
+formSurvey.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+  const log = logParticipantAction(10);
+
   const formData = new FormData(formSurvey);
 
   const request = new Request("survey.php", {
@@ -22,6 +24,13 @@ formSurvey.addEventListener("submit", (e) => {
     body: formData
   });
 
-  fetch(request);
-  window.location.href = "/thanks/";
+  const response = fetch(request);
+  Promise.all([log, response]).then((values) => {
+    if (values[1].ok) {
+      window.location.href = "/thanks/";
+    } else {
+      localStorage.setItem("survey", JSON.stringify(Object.fromEntries(formData)));
+      window.location.href = "/error/";
+    }
+  });
 });

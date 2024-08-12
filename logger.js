@@ -24,6 +24,8 @@ function actionIdToString(actionId) {
             return 'submitted the survey';
         case 11:
             return 'skipped the survey';
+        case 254:
+            return 'encountered an error';
         case 255:
             return 'completed Experiment';
         default:
