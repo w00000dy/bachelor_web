@@ -78,6 +78,23 @@
             </tbody>
         </table>
 
+        <h3>Action Log</h3>
+            <label>
+                <input id="switchActionLog" type="checkbox" role="switch">
+                Show Action Log
+            </label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>action</th>
+                        <th>date</th>
+                    </tr>
+                </thead>
+                <tbody id="actionLog">
+                </tbody>
+            </table>
+
         <h2>Password Hash Generator</h2>
         <form id="generatePasswordHash">
             <input type="text" id="newUsername" placeholder="Username" autocomplete="username" hidden>
@@ -88,6 +105,7 @@
     </main>
 
     <script src="/webSerial.js"></script>
+    <script src="/logger.js"></script>
     <script src="debug.js"></script>
 
 </body>

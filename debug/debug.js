@@ -130,7 +130,7 @@ async function setParticipantID(id) {
         alert("Error: " + response.status + "\n" + response.statusText);
         return;
     }
-    
+
     loadCurrentParticipant();
 }
 
@@ -205,3 +205,46 @@ btnLoadParticipants.addEventListener("click", async () => {
         });
     });
 });
+
+
+switchActionLog.addEventListener("click", autoGetActionLog);
+
+async function autoGetActionLog() {
+    if (!switchActionLog.checked) {
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("password", password.value);
+
+    const myRequest = new Request("getActionLog.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+
+    if (!response.ok) {
+        alert("Error: " + response.status + "\n" + response.statusText);
+        return;
+    }
+
+    response.json().then((data) => {
+        actionLog.innerHTML = "";
+        data.forEach((action) => {
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            td1.innerText = action.participant;
+            const td2 = document.createElement("td");
+            td2.innerText = actionIdToString(action.action);
+            const td3 = document.createElement("td");
+            td3.innerText = action.date;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            actionLog.appendChild(tr);
+        });
+    });
+
+    setTimeout(autoGetActionLog, 1000);
+}
