@@ -1,6 +1,8 @@
 <?php
 require_once '../mysql.php';
 
+header('Content-Type: text/plain');
+
 // sql to create table Participants
 $sql = "CREATE TABLE Participants (
 id CHAR(13) NOT NULL PRIMARY KEY,
@@ -28,7 +30,7 @@ situation_already_encountered TINYINT UNSIGNED,
 know_pairing_code BOOLEAN,
 improvements TEXT,
 additional_thoughts TEXT,
-FOREIGN KEY (participant) REFERENCES Participants(id))";
+FOREIGN KEY (participant) REFERENCES Participants(id) ON DELETE CASCADE)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table Survey created successfully\n";
@@ -49,7 +51,7 @@ $sql = "CREATE TABLE electronic_devices_main_application (
     navigation_and_maps BOOLEAN NOT NULL,
     health_and_fitness BOOLEAN NOT NULL,
     smart_home BOOLEAN NOT NULL,
-    FOREIGN KEY (participant) REFERENCES Survey(participant))";
+    FOREIGN KEY (participant) REFERENCES Survey(participant) ON DELETE CASCADE)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table electronic_devices_main_application created successfully\n";
@@ -64,7 +66,7 @@ $sql = "CREATE TABLE bt_devices (
         headphones BOOLEAN NOT NULL,
         keyboard_mouse BOOLEAN NOT NULL,
         others BOOLEAN NOT NULL,
-        FOREIGN KEY (participant) REFERENCES Survey(participant))";
+        FOREIGN KEY (participant) REFERENCES Survey(participant) ON DELETE CASCADE)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table bt_devices created successfully\n";
@@ -77,7 +79,7 @@ $sql = "CREATE TABLE action_log (
     participant CHAR(13) NOT NULL,
     action TINYINT UNSIGNED NOT NULL,
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (participant) REFERENCES Participants(id))";
+    FOREIGN KEY (participant) REFERENCES Participants(id) ON DELETE CASCADE)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table action_log created successfully\n";
@@ -93,7 +95,7 @@ $sql = "CREATE TABLE Screenshots (
     device_model TINYTEXT NOT NULL,
     user_agent TEXT NOT NULL,
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (participant) REFERENCES Participants(id))";
+    FOREIGN KEY (participant) REFERENCES Participants(id) ON DELETE CASCADE)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Table Screenshots created successfully\n";

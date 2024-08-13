@@ -10,7 +10,7 @@ if (!isset($_POST['id']) || $_POST['id'] === '') {
 $stmt = $conn->prepare("SELECT task FROM Participants WHERE id = ?");
 $stmt->bind_param("s", $uid);
 
-$uid = $_POST['id'];
+$uid = parsePost('id');
 
 $stmt->execute();
 

@@ -134,6 +134,24 @@ async function setParticipantID(id) {
     loadCurrentParticipant();
 }
 
+async function deleteParticipant(id) {
+    const formData = new FormData();
+    formData.append("password", password.value);
+    formData.append("id", id);
+
+    const myRequest = new Request("deleteParticipant.php", {
+        method: "POST",
+        body: formData
+    });
+
+    const response = await fetch(myRequest);
+
+    if (!response.ok) {
+        alert("Error: " + response.status + "\n" + response.statusText);
+        return;
+    }
+}
+
 btnScreenshotUpload.addEventListener("click", () => {
     window.location.href = "/screenshot/?uid=" + getCookie("participant");
 });
@@ -174,6 +192,9 @@ btnLoadParticipants.addEventListener("click", async () => {
             const td5 = document.createElement("td");
             const del = document.createElement("a");
             del.innerText = "🗑️";
+            del.addEventListener("click", () => {
+                deleteParticipant(participant.id);
+            });
             td5.appendChild(del);
             tr.appendChild(td1);
             tr.appendChild(td2);
