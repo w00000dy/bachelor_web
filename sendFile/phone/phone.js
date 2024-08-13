@@ -5,7 +5,10 @@ formFile.addEventListener('submit', function (e) {
         return response.text();
     }
     ).then(data => {
-        alert(data);
         console.log(data);
+        if (data === 'Success') {
+            alert('File sent successfully!\nTask completed!');
+            window.location.href = '/thanks/';
+        }
     });
 });

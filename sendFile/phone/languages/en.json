@@ -1,7 +1,7 @@
 {
     "select_file": "Take a photo",
     "task": "Task",
-    "task_description": "First follow the instructions on the computer to connect this device to the computer via Bluetooth. Then take a photo of the room you are in and transfer it to the computer via Bluetooth. Use the buttons below to do this.",
+    "task_description": "First follow the instructions on the computer to connect this device to the computer via Bluetooth. Then select the photo that is already on the device using the buttons below and send it to the browser via Bluetooth by pressing the \"Send file via Bluetooth\" button.",
     "title": "File send",
     "upload_file": "Send file via Bluetooth"
 }

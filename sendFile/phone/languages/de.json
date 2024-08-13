@@ -1,7 +1,7 @@
 {
     "select_file": "Mache ein Foto",
     "task": "Aufgabe",
-    "task_description": "Befolge zuerst den Anweisungen auf dem Computer, um dieses Gerät per Bluetooth mit dem Computer zu verbinden. Anschließend mache ein Foto von dem Raum, in dem du dich befindest und übertrage es per Bluetooth auf den Computer. Verwende dazu die unten stehenden Schaltflächen.",
+    "task_description": "Befolge zuerst die Anweisungen auf dem Computer, um dieses Gerät per Bluetooth mit dem Computer zu verbinden. Wähle anschließend das Foto aus, das sich bereits auf dem Gerät befindet, indem du die Schaltflächen unten verwendest und sende es durch Drücken des Knopfes „Datei per Bluetooth senden“ per Bluetooth an den Browser.",
     "title": "Datei senden",
     "upload_file": "Datei per Bluetooth senden"
 }

@@ -14,6 +14,6 @@
     "loading": "Loading…",
     "pairing_code": "Pairing code",
     "task": "Task",
-    "task_description": "Your task is to send a file to the browser via Bluetooth. If you no longer have the website open, go back to the website. Alternatively, you can also find a link to the website on the home screen of your smartphone. Now take a photo of the room using the buttons below and send it to the browser via Bluetooth.",
+    "task_description": "Your task is to send a file to the browser via Bluetooth. If you no longer have the website open, go back to the website. Alternatively, you can also find a link to the website on your smartphone's home screen. Now select the photo that is already on the device using the buttons below and send it to the browser via Bluetooth by pressing the \"Send file via Bluetooth\" button.",
     "title": "File send"
 }

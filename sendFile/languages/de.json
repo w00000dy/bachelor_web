@@ -14,6 +14,6 @@
     "loading": "Lade…",
     "pairing_code": "Kopplungscode",
     "task": "Aufgabe",
-    "task_description": "Deine Aufgabe ist es, eine Datei per Bluetooth an den Browser zu senden. Falls du aktuell nicht mehr die Webseite geöffnet hast, gehe zurück zur Webseite. Alternativ findest du auch auf dem Startbildschirm des Smartphones einen Link zur Webseite. Mache nun ein Foto vom Raum, indem du die Schaltflächen unten verwendest und sende es per Bluetooth an den Browser.",
+    "task_description": "Deine Aufgabe ist es, eine Datei per Bluetooth an den Browser zu senden. Falls du aktuell nicht mehr die Webseite geöffnet hast, gehe zurück zur Webseite. Alternativ findest du auch auf dem Startbildschirm des Smartphones einen Link zur Webseite. Wähle nun das Foto aus, das sich bereits auf dem Gerät befindet, indem du die Schaltflächen unten verwendest und sende es durch Drücken des Knopfes „Datei per Bluetooth senden“ per Bluetooth an den Browser.",
     "title": "Datei senden"
 }
