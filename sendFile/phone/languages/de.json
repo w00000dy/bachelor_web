@@ -4,7 +4,7 @@
     "file_uploaded": "Datei erfolgreich hochgeladen!",
     "fileSuccess": "Datei erfolgreich gesendet!\nDu kannst jetzt auf dem Computer fortfahren.",
     "not_connected": "Nicht verbunden",
-    "select_file": "Mache ein Foto",
+    "select_file": "Wähle die Datei aus",
     "status": "Aktueller Status: ",
     "task": "Aufgabe",
     "task_description": "Befolge zuerst die Anweisungen auf dem Computer, um dieses Gerät per Bluetooth mit dem Computer zu verbinden. Wähle anschließend das Foto aus, das sich bereits auf dem Gerät befindet, indem du die Schaltflächen unten verwendest und sende es durch Drücken des Knopfes „Datei per Bluetooth senden“ per Bluetooth an den Browser.",

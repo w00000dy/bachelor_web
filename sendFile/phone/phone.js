@@ -24,7 +24,7 @@ async function fakeUpload() {
     let random = Math.floor(Math.random() * 5) + 8;
     progress.value += random;
     if (progress.value < progress.max) {
-        setTimeout(fakeUpload, 10);
+        setTimeout(fakeUpload, 100);
     }
     else {
         progress.hidden = true;
