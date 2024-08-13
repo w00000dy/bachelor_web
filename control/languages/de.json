@@ -12,6 +12,8 @@
     "dialog_btn_waiting_for_connection": "Warte auf Verbindung…",
     "dialog_header": "🛜 Bluetooth Verbindung",
     "dialog_text": "Um die Aufgabe zu starten, musst du zuerst dein Smartphone per Bluetooth mit dem Browser verbinden.",
+    "hint": "Hinweis",
+    "hint_text": "Auf Apple Geräten muss AssistiveTouch aktiviert werden, um die Steuerung der Maus zu ermöglichen. Gehe dazu in die „Einstellungen“ > „Bedienungshilfen“ > „Tippen“ > „AssistiveTouch“ und aktiviere AssistiveTouch. AssistiveTouch kann nach dem Experiment wieder deaktiviert werden.",
     "loading": "Lade…",
     "pairing_code": "Kopplungscode",
     "remote_control": "Fernsteuerung",
