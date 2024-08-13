@@ -2,6 +2,7 @@ var term = new Terminal();
 var webSerialPort = new WebSerialPort();
 var port;
 
+switchActionLog.checked = false;
 loadCurrentParticipant();
 
 term.open(document.getElementById('terminal'));
@@ -225,6 +226,7 @@ async function autoGetActionLog() {
     const response = await fetch(myRequest);
 
     if (!response.ok) {
+        switchActionLog.checked = false;
         alert("Error: " + response.status + "\n" + response.statusText);
         return;
     }
