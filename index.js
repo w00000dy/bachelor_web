@@ -2,6 +2,7 @@ btnStartExperiment.addEventListener('click', startExperiment);
 btnCancelExperiment.addEventListener('click', cancelExperiment);
 
 user_study_about_text.setAttribute("data-i18n", "user_study_about_text" + getCookie("task"));
+summary_text.setAttribute("data-i18n", "summary_text" + getCookie("task"));
 
 async function startExperiment() {
     await logParticipantAction(0);
