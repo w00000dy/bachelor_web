@@ -7,6 +7,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <title data-i18n="title"> </title>
 </head>
 
@@ -28,10 +29,14 @@
         <h2 data-i18n="task"> </h2>
         <p data-i18n="task_description"> </p>
 
+        <p><b data-i18n="status"> </b><span id="notConnected" class="pico-color-red-500" data-i18n="not_connected"> </span><span id="connecting" class="pico-color-amber-200" data-i18n="connecting" hidden> </span><span id="connected" class="pico-color-azure-500" data-i18n="connected" hidden> </span><span id="fileUploadedText" class="pico-color-green-500" data-i18n="file_uploaded" hidden> </span></p>
+
+        <progress id="progress" value="0" max="5000" hidden> </progress>
+
         <form id="formFile" action="file.php" method="post" enctype="multipart/form-data">
             <label for="file" data-i18n="select_file"> </label>
             <input type="file" id="file" name="file" accept="image/*">
-            <button type="submit" data-i18n="upload_file"> </button>
+            <button id="btnSubmit" type="submit" data-i18n="upload_file"> </button>
         </form>
 
     </main>

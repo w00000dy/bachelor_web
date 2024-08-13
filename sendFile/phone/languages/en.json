@@ -1,5 +1,11 @@
 {
+    "connected": "Connected",
+    "connecting": "Connecting…",
+    "file_uploaded": "File successfully uploaded!",
+    "fileSuccess": "File successfully sent!\nYou can now continue on the computer.",
+    "not_connected": "Not connected",
     "select_file": "Take a photo",
+    "status": "Current status: ",
     "task": "Task",
     "task_description": "First follow the instructions on the computer to connect this device to the computer via Bluetooth. Then select the photo that is already on the device using the buttons below and send it to the browser via Bluetooth by pressing the \"Send file via Bluetooth\" button.",
     "title": "File send",
