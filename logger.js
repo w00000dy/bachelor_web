@@ -24,6 +24,14 @@ function actionIdToString(actionId) {
             return 'submitted the survey';
         case 11:
             return 'skipped the survey';
+        case 200:
+            return 'went to the cancel Experiment page';
+        case 201:
+            return 'went back to the Experiment';
+        case 202:
+            return 'cancelled the Experiment but went to the survey';
+        case 203:
+            return 'completly cancelled the Experiment';
         case 254:
             return 'encountered an error';
         case 255:
