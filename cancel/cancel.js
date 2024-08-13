@@ -5,3 +5,7 @@ btnCancelExperiment.addEventListener('click', function() {
 btnBackToExperiment.addEventListener('click', function() {
     window.history.back();
 });
+
+btnToSurvey.addEventListener('click', function() {
+    window.location.href = "/survey/";
+});
