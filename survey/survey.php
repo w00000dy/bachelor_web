@@ -40,10 +40,11 @@ $stmt->execute();
 $stmt->close();
 
 
-$stmt = $conn->prepare("INSERT INTO bt_devices (participant, smartwatches_fitness_trackers, headphones, keyboard_mouse, others) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("siiii", $uniqid, $smartwatches_fitness_trackers, $headphones, $keyboard_mouse, $others);
+$stmt = $conn->prepare("INSERT INTO bt_devices (participant, car, smartwatches_fitness_trackers, headphones, keyboard_mouse, others) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("siiiii", $uniqid, $car, $smartwatches_fitness_trackers, $headphones, $keyboard_mouse, $others);
 
 $prefix = 'bt_devices_';
+$car = parseSelectPost($prefix . 'car');
 $smartwatches_fitness_trackers = parseSelectPost($prefix . 'smartwatches_fitness_trackers');
 $headphones = parseSelectPost($prefix . 'headphones');
 $keyboard_mouse = parseSelectPost($prefix . 'keyboard_mouse');

@@ -62,6 +62,7 @@ if ($conn->query($sql) === TRUE) {
 // sql to create table bt_devices
 $sql = "CREATE TABLE bt_devices (
         participant CHAR(13) NOT NULL PRIMARY KEY,
+        car BOOLEAN NOT NULL,
         smartwatches_fitness_trackers BOOLEAN NOT NULL,
         headphones BOOLEAN NOT NULL,
         keyboard_mouse BOOLEAN NOT NULL,
