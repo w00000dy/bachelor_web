@@ -47,9 +47,9 @@
         <br>
         <form id="formScreenshot" action="screenshot.php" method="post" enctype="multipart/form-data">
             <label for="screenshot" data-i18n="select_image"> </label>
-            <input type="file" id="screenshot" name="screenshot" accept="image/*">
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
             <label for="deviceModel" data-i18n="device_model"> </label>
-            <input type="text" id="deviceModel" name="device_model" data-i18n="device_model_input">
+            <input type="text" id="deviceModel" name="device_model" data-i18n="device_model_input" required>
             <button type="submit" data-i18n="upload_screenshot"> </button>
         </form>
 

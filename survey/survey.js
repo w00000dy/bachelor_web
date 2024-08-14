@@ -8,6 +8,10 @@ rangeTechEx.addEventListener("input", (event) => {
   rangeTechExVal.textContent = event.target.value;
 });
 
+bluetoothSecurity.addEventListener("input", (event) => {
+  bluetoothSecurityVal.textContent = event.target.value;
+});
+
 skipSurvey.addEventListener("click", async () => {
   await logParticipantAction(11);
   window.location.href = "/thanks/";

@@ -1,8 +1,8 @@
 <?php
 require_once '../mysql.php';
 
-$stmt = $conn->prepare("INSERT INTO Survey (participant, age, gender, num_electronic_devices, regular_tablet_laptop_use, technical_experience, encountered_problems, bt_pairing_problems, problems_explaination, situation_already_encountered, know_pairing_code, improvements, additional_thoughts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("siiiiiiisiiss", $uniqid, $age, $gender, $num_electronic_devices, $regular_tablet_laptop_use, $technical_experience, $encountered_problems, $bt_pairing_problems, $problems_explaination, $situation_already_encountered, $know_pairing_code, $improvements, $additional_thoughts);
+$stmt = $conn->prepare("INSERT INTO Survey (participant, age, gender, num_electronic_devices, regular_tablet_laptop_use, technical_experience, encountered_problems, bt_pairing_problems, problems_explaination, bluetooth_security, situation_already_encountered, know_pairing_code, improvements, additional_thoughts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("siiiiiiisiiiss", $uniqid, $age, $gender, $num_electronic_devices, $regular_tablet_laptop_use, $technical_experience, $encountered_problems, $bt_pairing_problems, $problems_explaination, $bluetooth_security, $situation_already_encountered, $know_pairing_code, $improvements, $additional_thoughts);
 
 $uniqid = $_COOKIE['participant'];
 $age = parsePost('age');
@@ -13,6 +13,7 @@ $technical_experience = parsePost('technical_experience');
 $encountered_problems = parsePost('encountered_problems');
 $bt_pairing_problems = parsePost('bt_pairing_problems');
 $problems_explaination = parsePost('problems_explaination');
+$bluetooth_security = parsePost('bluetooth_security');
 $situation_already_encountered = parsePost('situation_already_encountered');
 $know_pairing_code = parsePost('know_pairing_code');
 $improvements = parsePost('improvements');

@@ -1,6 +1,7 @@
 {
     "additional_thoughts": "Hast du sonst noch Gedanken oder Anmerkungen, die du mit uns teilen möchtest?",
     "age": "Alter",
+    "bluetooth_security_1_to_5": "Auf einer Skala von 1 bis 5, wie sicher denkst du sind Bluetooth-Verbindungen? (1 ist nicht sicher, 5 ist sehr sicher)",
     "bt_pairing_problems": "Hat die Bluetooth-Kopplung mit deinem Smartphone problemlos funktioniert?",
     "btn_cancel_experiment": "Experiment abbrechen",
     "can_anything_be_improved": "Gibt es deiner Meinung nach Verbesserungsmöglichkeiten?",
