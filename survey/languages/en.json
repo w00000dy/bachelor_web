@@ -17,6 +17,7 @@
     "headphones": "Headphones",
     "health_and_fitness": "Health and fitness (smartwatches / fitness trackers)",
     "how_many_electronic_devices": "How many electronic devices do you use every day?",
+    "how_many_electronic_devices_hint": "This refers to devices such as tablets, PCs, smartphones, smartwatches, laptops, e-readers, fitness trackers and similar technologies. It does not include simple household appliances such as toasters, hair dryers or blenders.",
     "if_encountered_problems_explain": "If you have encountered any problems, please explain them here.",
     "information_search": "Information search",
     "keyboard_mouse": "Keyboard / mouse",

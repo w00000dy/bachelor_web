@@ -17,6 +17,7 @@
     "headphones": "Kopfhörer",
     "health_and_fitness": "Gesundheit und Fitness (Smartwatches/Fitness-Tracker)",
     "how_many_electronic_devices": "Wie viele elektronische Geräte benutzt du jeden Tag?",
+    "how_many_electronic_devices_hint": "Gemeint sind Geräte wie Tablets, PCs, Smartphones, Smartwatches, Laptops, E-Reader, Fitness-Tracker und ähnliche Technologien. Nicht gemeint sind einfache Haushaltsgeräte wie Toaster, Föhn oder Mixer.",
     "if_encountered_problems_explain": "Wenn du auf Probleme gestoßen bist, erläutere diese bitte hier.",
     "information_search": "Informationssuche",
     "keyboard_mouse": "Tastatur / Maus",
