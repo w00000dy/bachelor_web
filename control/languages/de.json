@@ -14,6 +14,7 @@
     "dialog_text": "Um die Aufgabe zu starten, musst du zuerst dein Smartphone per Bluetooth mit dem Browser verbinden.",
     "esc_hint": "Durch Drücken der ",
     "esc_hint_ac1": "-Taste kannst du die Fernsteuerung beenden.",
+    "esc_hint2": "Somit kannst du wieder Eingaben auf dem Computer machen.",
     "hint": "Hinweis",
     "hint_text": "Auf Apple Geräten muss AssistiveTouch aktiviert werden, um die Steuerung der Maus zu ermöglichen. Gehe dazu in die „Einstellungen“ > „Bedienungshilfen“ > „Tippen“ > „AssistiveTouch“ und aktiviere AssistiveTouch. Nun wird dir eine AssistiveTouch Taste angezeigt, mit der du zum Home Bildschirm kommst. AssistiveTouch kann nach dem Experiment wieder deaktiviert werden.",
     "loading": "Lade…",
