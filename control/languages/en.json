@@ -12,6 +12,8 @@
     "dialog_btn_waiting_for_connection": "Waiting for connection…",
     "dialog_header": "🛜 Bluetooth connection",
     "dialog_text": "To start the task, you must first connect your smartphone to the browser via Bluetooth.",
+    "esc_hint": "You can end remote control by pressing the ",
+    "esc_hint_ac1": "key.",
     "hint": "Hint",
     "hint_text": "On Apple devices, AssistiveTouch must be activated to enable mouse control. To do this, go to \"Settings\" > \"Accessibility\" > \"Touch\" > \"AssistiveTouch\" and activate AssistiveTouch. You will now see an AssistiveTouch button that will take you to the Home screen. AssistiveTouch can be deactivated again after the experiment.",
     "loading": "Loading…",

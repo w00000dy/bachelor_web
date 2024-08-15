@@ -49,7 +49,7 @@ webSerialPort.getPort().then((port) => {
             dialogBtnWaitingForConnection.hidden = false;
             dialogBtnGoToTask.hidden = true;
             dialogBtnGoToTask.disabled = true;
-            document.pointerLockElement = null;
+            document.exitPointerLock();
         }
     });
 });

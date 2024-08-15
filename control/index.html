@@ -7,11 +7,24 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.bluetooth.com/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.bluetooth.com/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <title data-i18n="title"> </title>
     <style>
         iframe {
             pointer-events: none;
             user-select: none;
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: max-content;
+            background-color: rgba(217, 38, 98, 0.2);
+            border-radius: 10px;
+            border: 5px solid rgba(217, 38, 98, 0.5);
+            font-size: xx-large;
         }
     </style>
 </head>
@@ -54,6 +67,10 @@
 
         <button id="btnTaskNotDone" class="secondary" data-i18n="btn_task_not_done"> </button>
         <button id="btnTaskDone" data-i18n="btn_task_done"> </button>
+
+        <div id="escHint" class="centered" hidden>
+            <strong class="pico-color-red-500" data-i18n="esc_hint" data-i18n-childs="1"> <kbd>ESC</kbd> </strong>
+        </div>
 
         <canvas id="canvas" hidden></canvas>
 

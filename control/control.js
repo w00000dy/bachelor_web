@@ -22,6 +22,7 @@ async function pointerLockChange() {
         document.addEventListener("wheel", sendScroll);
         document.addEventListener("mousedown", sendMouseClick);
         document.addEventListener("mouseup", sendMouseClick);
+        escHint.hidden = false;
     } else {
         await logParticipantAction(7);
         console.log("The pointer lock status is now unlocked");
@@ -31,6 +32,7 @@ async function pointerLockChange() {
         document.removeEventListener("wheel", sendScroll);
         document.removeEventListener("mousedown", sendMouseClick);
         document.removeEventListener("mouseup", sendMouseClick);
+        escHint.hidden = true;
     }
 }
 
