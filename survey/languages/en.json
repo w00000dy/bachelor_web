@@ -47,7 +47,7 @@
     "what_is_main_application_for_electronic_devices": "What is your main application for electronic devices?",
     "work_and_productivity": "Work and productivity",
     "yes": "Yes",
-    "yes_completely": "Yes, I have already controlled my smartphone via Blueooth from a browser.",
-    "yes_only_browser": " have already connected my smartphone to a browser via Bluetooth.",
+    "yes_completely": "Yes, I have already controlled my smartphone via Bluetooth from a browser.",
+    "yes_only_browser": "I have already connected my smartphone to a browser via Bluetooth.",
     "yes_pairing": "I have already paired my phone with another device using Bluetooth."
 }
